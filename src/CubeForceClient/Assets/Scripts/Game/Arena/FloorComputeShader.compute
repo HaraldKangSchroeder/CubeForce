@@ -1,0 +1,39 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float4> Result;
+RWStructuredBuffer<int> diamonds;
+Texture2D<float4> noise;
+
+float background_r;
+float background_g;
+float background_b;
+float res;
+float frequency;
+float amplitude;
+float step;
+bool use_noise;
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    // TODO: insert actual code here!
+    if(id.x < res && id.y < res){
+        float shift_factor = sin(id.y * frequency) * amplitude;
+
+        int y_remote = (int(id.y - step)) % res;
+        int x_remote = (id.x + shift_factor * 10) % res;
+
+        int color_id = diamonds[y_remote + x_remote * res];
+        float color_step = 0.03;
+        if(use_noise){
+            Result[id.xy] = float4(background_r + (color_id * background_r * color_step) * noise[id.xy].r,background_g + (color_id* background_g * color_step)  * noise[id.xy].g,background_b + (color_id * background_b * color_step) * noise[id.xy].b,1.0);
+        }
+        else{
+            Result[id.xy] = float4(background_r + (color_id * background_r * color_step),background_g + (color_id* background_g * color_step),background_b + (color_id * background_b * color_step),1.0);
+        }
+        //Result[id.xy] = float4(noise[id.xy].r,noise[id.xy].r,noise[id.xy].r,0.0);
+    }
+}
