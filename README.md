@@ -12,6 +12,7 @@ Its purpose was for me to get in touch with the game engine unity and to impleme
 One player (host) needs to run the server in addition to the game itself. To start the server, he needs to execute `./Cubeforce/Server/Server.exe`
 
 Afterwards, all players can start the client application/game by executing `./Cubeforce/Game/Game.exe` and use the host ip address to connect to the server.
+Be careful, sound might be a bit loud at the beginning. So keep your volume low.
 
 ### Global network
 This requires further configurations. It works if the host does portforwarding (server listens on port 60002), but keep in mind that this opens security leaks.
