@@ -2,7 +2,11 @@
 
 CubeForce is a private project of mine and a realtime online multiplayer shooter game up to 6 players at the moment.
 
-VIDEO
+## Gameplay
+
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/81776044/143573602-757d2277-935c-45b6-b506-ca6896284816.gif)
+
+(low framerate due to .gif)
 
 Its purpose was for me to get in touch with the game engine unity and to implement an udp based dedicated multiplayer server with the C# .NET framework from scratch. The game is still in progress and sometimes a bit buggy, but it is already playable.
 
