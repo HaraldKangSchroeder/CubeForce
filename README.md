@@ -16,3 +16,14 @@ Be careful, sound might be a bit loud at the beginning. So keep your volume low.
 
 ### Global network
 This requires further configurations. It works if the host does portforwarding (server listens on port 60002), but keep in mind that this opens security leaks.
+
+## Gameplay
+
+* Shoot - Left mouse click
+* Move - WASD
+* Sidestep - Space
+* Shield - Shift
+
+## Note
+When you start the application, you will get a warning - smth like "unrecognized manufacturer" or similar. This is due to the fact that I am indeed just nobody,
+so you have to trust me there.
